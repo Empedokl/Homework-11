@@ -1,0 +1,51 @@
+.services{
+    padding-bottom: 55px;
+    padding-top: 55px;
+}
+.services__list{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+.services__list-item{
+    width: 382px;
+    margin-bottom: 105px;
+    padding-left: 82px;
+    background-repeat: no-repeat;
+    background-position: left 14px top;
+}
+.services__list-title{
+    font-family: $main-font;
+    font-size: 14px;
+    line-height: 17px;
+    text-transform: uppercase;
+    color: #333333;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+.services__list-description{
+    font-family: $secondary-font;
+    font-size: 15px;
+    line-height: 24px;
+    color: #999999;
+}
+.services__list-item_alarm{
+    background-image: url("../images/services/alarm.svg");
+}
+.services__list-item_graph{
+    background-image: url("../images/services/graph.svg");
+}
+.services__list-item_computer{
+    background-image: url("../images/services/computer.svg");
+}
+.services__list-item_book{
+    background-image: url("../images/services/book.svg");
+}
+.services__list-item_home{
+    background-image: url("../images/services/home.svg");
+}
+.services__list-item_image{
+    background-image: url("../images/services/image.svg");
+}
