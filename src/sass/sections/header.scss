@@ -5,74 +5,80 @@
      url("../images/header/banner.jpg");
     background-repeat: no-repeat;
     background-size: cover;
-    
+    &__navigation{
+          padding-bottom: 200px;
+}
+    &__title{
+    margin-top: 0;
+    @extend %font-transform;
+    color: #ffffff;
+    font-size: 150px;
+    text-align: center;
+}
+&__about-title{
+    display: block;
+}
+    &__desctiption{
+    text-align: center;
+    font-family: 'Kaushan Script', cursive;
+    font-size: 72px;
+    color: #ffffff;
+}
+@media (min-resolution: 192dpi) {
+    background-image: linear-gradient(rgba(243,129,129,0.9)  0%, rgba(252,227,138,0.9) 100%),
+    url(../images/header/banner@2x.jpg);
+}
 }
 
-@media (-webkit-min-device-pixel-ratio: 2), (-o-min-device-pixel-ratio: 2/1), (min-resolution: 192dpi) {
-    .header{
-        background-image: linear-gradient(rgba(243,129,129,0.9)  0%, rgba(252,227,138,0.9) 100%),
-         url(../images/header/banner@2x.jpg);
-    }
-}
+
 .navigation{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-between;
+    @extend %align-between;
     align-items: baseline;
 }
 .logotype{
     font-family: $main-font;
-    font-size: 30px;
-    font-weight: bold;
+    @include font(30px,700);
     color: #ffffff;
 }
 .menu-list{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     margin-left: auto;
-
-}
-.menu-list__item{
+&__item{
     margin-right: 55px;
 }
-.menu-list__link{
-    font-family: $main-font;
+&__link{
+    @extend %font-transform;
     color: #ffffff;
     font-size: 14px;
-    text-transform: uppercase;
     position: relative;
+    &:hover{
+        transition: color 2s linear;
+        color:#fce38a;
+    }
+    &:hover::after{
+        width: 100%;
+    }
+    &::after{
+        display: block;
+        content: "";
+        height: 3px;
+        background-color: #fce38a;
+        position: absolute;
+        bottom: -12px;
+        width: 0%;
+        left: 50%;
+        transform: translate(-50%);
+        transition: width 2s linear;
+    
+    }
 }
-.menu-list__link:hover{
-    transition: color 2s linear;
-    color:#fce38a;
-}
-.menu-list__link:hover::after{
-    width: 100%;
-}
-.menu-list__link::after{
-    display: block;
-    content: "";
-    height: 3px;
-    background-color: #fce38a;
-    position: absolute;
-    bottom: -12px;
-    width: 0%;
-    left: 50%;
-    transform: translate(-50%);
-    transition: width 2s linear;
 
 }
 
 .cart-list{
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex; 
     align-self: flex-end;
-}
-
-.cart-list__basket{
+    &__basket{
     height: 20px;
     width: 18px;
     background-image: url("../images/cart-list/cart.svg");
@@ -80,7 +86,7 @@
     background-position: bottom;
     margin-right: 40px;
 }
-.cart-list__btn{
+&__btn{
     height: 19px;
     width: 18px;
     background-color: transparent;
@@ -90,27 +96,8 @@
     background-repeat: no-repeat;
     background-position: center;
 }
-.header__navigation{
-    padding-bottom: 200px;
 }
 
-.header__title{
-    margin-top: 0;
-    font-family: $main-font;
-    color: #ffffff;
-    font-size: 150px;
-    text-transform: uppercase;
-    text-align: center;
-}
-.header__about-title{
-    display: block;
-}
-.header__desctiption{
-    text-align: center;
-    font-family: 'Kaushan Script', cursive;
-    font-size: 72px;
-    color: #ffffff;
-}
 .modal-btn{
     border: solid 3px #ffffff;
     background-color: transparent;
@@ -118,9 +105,8 @@
     height: 44px;
     display: block;
     margin: 0 auto;
-    font-family: $main-font;
+    @extend %font-transform;
     color: #ffffff;
-    text-transform: uppercase;
     font-size: 14px;
 
 }

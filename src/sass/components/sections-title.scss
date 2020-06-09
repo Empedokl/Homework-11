@@ -1,19 +1,17 @@
 .sections-title{
     text-align: center;
-    font-family: $main-font;
-    font-size: 30px;
+    @include font(30px,700);
     line-height: 36px;
-    text-transform: uppercase;
+    @extend %font-transform;
     color: #333333;
-    font-weight: bold;
     margin-bottom: 112px;
+    &::after{
+        display: block;
+        content: "";
+        height: 3px;
+        width: 60px;
+        background-color: rgb(243, 129, 129);
+        margin: 42px auto 0;
+    }
 }
 
-.sections-title::after{
-    display: block;
-    content: "";
-    height: 3px;
-    width: 60px;
-    background-color: rgb(243, 129, 129);
-    margin: 42px auto 0;
-}

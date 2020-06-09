@@ -1,44 +1,40 @@
-.team__list{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: space-between;
-}
-.team__list-item{
-    margin-bottom: 85px;
-}
-.team__list-item:hover .team__list-img{
-transition: -webkit-transform 2s linear;
-transition: transform 2s linear;
-transition: transform 2s linear, -webkit-transform 2s linear;
-transform: translate(-10px, -10px);
-   box-shadow: 10px 10px #95e1d3;
-}
-.team__list-item:hover .overlay{
-    opacity: 1;  
-}
-.contacts{
-    position: relative;
-    margin-bottom: 30px;
+.team{
+    &__name{
+        text-align: center;
+        color: #333333;
+        @extend %font-transform;
+        font-size: 14px;
+        font-weight: bold;
+    }
+    &__about{
+        font-family: $secondary-font;
+        text-align: center;
+        font-size: 15px;
+        line-height: 24px;
+        font-style: italic;
+        color: #999999;
+    }
+    &__list{
+        display: -webkit-box;
+        display: -ms-flexbox;
+        @extend %align-between;
+        &-item{
+            margin-bottom: 85px;
+        
+        &:hover .team__list-img{
+            transition: -webkit-transform 2s linear;
+            transition: transform 2s linear;
+            transition: transform 2s linear, -webkit-transform 2s linear;
+            transform: translate(-10px, -10px);
+               box-shadow: 10px 10px #95e1d3;
+            }
+            &:hover .overlay{
+                opacity: 1;  
+            }
+        }
+    }
 }
 
-.team__name{
-    text-align: center;
-    color: #333333;
-    font-family: $main-font;
-    font-size: 14px;
-    text-transform: uppercase;
-    font-weight: bold;
-}
-
-.team__about{
-    font-family: $secondary-font;
-    text-align: center;
-    font-size: 15px;
-    line-height: 24px;
-    font-style: italic;
-    color: #999999;
-}
 .overlay{
     width: 100%;
     height: 100%;
@@ -49,54 +45,64 @@ transform: translate(-10px, -10px);
     transform: translate(-10px, -10px);
     opacity: 0;
     transition: opacity 2s linear;
-    display: -webkit-box;
-    display: -ms-flexbox;
     display: flex;
     align-items: center;
     justify-content: center;
 }
-.contacts__list{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    
+
+
+.contacts{
+    position: relative;
+    margin-bottom: 30px;
+    &__list{
+        display: flex; 
+            &-item{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background-color: rgb(252, 227, 138);
+            height: 56px;
+            width: 56px;
+            background-repeat: no-repeat;
+            background-position: center;
+            border-right: 1px solid rgba(243, 129, 129, 0.5) ;
+                &:hover{ 
+                transition: background-color 2s linear;
+                background-color:  #f38181;
+                }  
+                    .contacts__list-link-icon{
+                        fill: rgb(252, 227, 138);
+                    }
+                }
+            }
+        }
+            &-link-icon{
+            fill: #f38181;
+            &_facebook{
+                width: 13px;
+                height: 26px;
+            }
+            &_twitter{
+                width: 26px;
+                height: 22px;
+            }
+            &_pinterest{
+                width: 21px;
+                height: 26px;
+            }
+            &_instagram{
+                width: 26px;
+                height: 26px;
+            }
+        }
+    }
+
 }
-.contacts__list-item{
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: rgb(252, 227, 138);
-    height: 56px;
-    width: 56px;
-    background-repeat: no-repeat;
-    background-position: center;
-    border-right: 1px solid rgba(243, 129, 129, 0.5) ;
-}
-.contacts__list-item:hover{ 
-    transition: background-color 2s linear;
-    background-color:  #f38181;
-}
-.contacts__list-item:hover .contact__list-link-icon{
-    fill: rgb(252, 227, 138);
-} 
-.contact__list-link-icon{
-    fill: #f38181;
-}
-.contact__list-link-icon_facebook{
-    width: 13px;
-    height: 26px;
-}
-.contact__list-link-icon_twitter{
-    width: 26px;
-    height: 22px;
-}
-.contact__list-link-icon_pinterest{
-    width: 21px;
-    height: 26px;
-}
-.contact__list-link-icon_instagram{
-    width: 26px;
-    height: 26px;
-}
+
+
+
+
+
+
+
+

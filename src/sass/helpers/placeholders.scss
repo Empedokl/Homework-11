@@ -1,0 +1,9 @@
+%align-between{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+%font-transform{
+    font-family: $main-font;
+    text-transform: uppercase;
+}
